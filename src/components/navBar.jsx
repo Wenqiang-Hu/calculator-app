@@ -19,9 +19,14 @@ class NavBar extends Component {
                             <a className="nav-link" href="#">Calculator</a>
                         </li>
                     </ul>
-                    <span className="navbar-text">
-                    Navbar text with an inline element
-                    </span>
+                    <ul className="navbar-nav ">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="#">Login</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Register</a>
+                        </li>
+                    </ul>
                     </div>
                 </div>
             </nav>
