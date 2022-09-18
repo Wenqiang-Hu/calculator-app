@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Base from './base';
 
 class Login extends Component {
     state = {  } 
     render() { 
         return (
-            <h1>Login page</h1>
+            <Base>
+                <h4>Login page</h4>
+            </Base>
         );
     }
 }

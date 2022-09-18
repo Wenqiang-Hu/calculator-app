@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Base from './base';
 
 class Calculator extends Component {
     state = {  } 
     render() { 
         return (
-            <h1>calculator page</h1>
+            <Base>
+                <h4>Calculator page</h4>
+            </Base>
         );
     }
 }
