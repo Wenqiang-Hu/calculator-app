@@ -8,8 +8,8 @@ class Calculator extends Component {
             <Base>
                  <div className="calculator">
                     <div className="output">
-                        <div className="last-output"></div>
-                        <div className="current-output"></div>
+                        <div className="last-output">123</div>
+                        <div className="current-output">99</div>
                     </div>
                     <button className='button-ac'>AC</button>
                     <button>Del</button>
