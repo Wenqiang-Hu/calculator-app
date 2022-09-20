@@ -7,6 +7,7 @@ import Login from './content/login';
 import NotFound from './content/NotFound';
 import Register from './content/register';
 
+
 class App extends Component {
     state = {  } 
     render() { 
@@ -15,13 +16,13 @@ class App extends Component {
                 <NavBar />
                 <div className='container'>
                     <Routes>
-                        <Route path='/' element={<Home />} />
-                        <Route path='/home' element={<Home />} />
-                        <Route path='/calculator' element={<Calculator />} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path='/register' element={<Register />} />
-                        <Route path='/404' element={<NotFound />} />
-                        <Route path='*' element={<Navigate replace to="/404" />} />
+                        <Route path='/calculator' element={<Home />} />
+                        <Route path='/calculator/home' element={<Home />} />
+                        <Route path='/calculator/calculator' element={<Calculator />} />
+                        <Route path='/calculator/login' element={<Login />} />
+                        <Route path='/calculator/register' element={<Register />} />
+                        <Route path='/calculator/404' element={<NotFound />} />
+                        <Route path='/calculator/*' element={<Navigate replace to="/calculator/404" />} />
                     </Routes>
                 </div>
             </React.Fragment>
