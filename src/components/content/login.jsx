@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Base from './base';
+import $ from 'jquery';
 
 class Login extends Component {
     state = {
@@ -11,7 +12,28 @@ class Login extends Component {
     handleClick = e => {
         e.preventDefault();
 
-        console.log(this.state);
+        if (this.state.username === ""){
+            this.setState({error_message: "Username is empty"});
+        } else if (this.state.password === ""){
+            this.setState({error_message: "Password is empty"});
+        }else{
+            $.ajax({
+                url: "https://app165.acapp.acwing.com.cn/calculator/login/",
+                type: "get",
+                data:{
+                    username: this.state.username,
+                    password: this.state.password,
+                },
+                dataType: "json",
+                success: resp =>{
+                    if (resp.result === "success"){
+                        window.location.href="/calculator/";
+                    } else {
+                        this.setState({error_message: resp.result})
+                    }
+                }
+            })
+        }
     }
     render() { 
         return (
