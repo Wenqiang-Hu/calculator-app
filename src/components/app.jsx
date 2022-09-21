@@ -9,11 +9,14 @@ import Register from './content/register';
 
 
 class App extends Component {
-    state = {  } 
+    state = {  
+        is_login: true,
+        username: "will",
+    } 
     render() { 
         return (
             <React.Fragment>
-                <NavBar />
+                <NavBar is_login={this.state.is_login} username={this.state.username} />
                 <div className='container'>
                     <Routes>
                         <Route path='/calculator' element={<Home />} />
