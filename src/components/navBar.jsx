@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import $ from "jquery";
 
 class NavBar extends Component {
     state = {  } 
 
+    handleClick = () => {
+        $.ajax({
+            url: "https://app165.acapp.acwing.com.cn/calculator/logout/",
+            type: "get",
+            success: resp =>{
+                if (resp.result === "success"){
+                    window.location.href="/calculator/";
+                } 
+            }
+        })
+    }
     render_calculator = () => {
         if (this.props.is_login){
             return (
@@ -24,7 +36,7 @@ class NavBar extends Component {
                         <a className="navbar-brand" style={{cursor: "pointer"}}>{this.props.username}</a>
                     </li>
                     <li className="nav-item">
-                        <a className="navbar-brand" style={{cursor: "pointer"}}>Log Out</a>
+                        <a onClick={this.handleClick} className="navbar-brand" style={{cursor: "pointer"}}>Log Out</a>
                     </li>
                 </ul>
             )
